@@ -1,0 +1,79 @@
+<body>
+<div class="box">
+    <h1>To do List</h1>
+<input id="to">
+<button onclick="add()">add</button>
+<ul id="list">
+    <Li>hello
+        <button onclick="deleteitems(event)">delete</button>
+    </Li>
+</ul>
+</div>
+</body>
+<script>
+    var u=document.getElementById("list")
+    var i=document.getElementById("to")
+    function add()
+    {
+    var listele=document.createElement("li")
+    listele.innerHTML = i.value+"<button onclick='deleteitems(event)'>delete</button>"
+   // console.log(listele.textContent)
+    u.append(listele)
+    }
+    function deleteitems(event)
+    {
+       // event.target.remove()//only button is deleted
+        event.target.parentElement.remove()
+    }
+</script>
+<style>
+    *
+    {
+        font-family: sans-serif;
+    }
+    .box
+    {
+        width: 40%;
+       
+        background: thistle;
+        
+        border-radius: 20px;
+        position: absolute;
+        left: 30%;
+        margin-top: 10%;
+
+    }
+    input{
+        background: transparent;
+    border: none;
+    width: 50%;
+    margin: 5px;
+    padding: 5px;
+    font-size: 20px;
+    border-bottom: solid black;
+    }
+    button{
+        border-radius: 10px;
+    padding: 5px;
+    border: none;
+    cursor: pointer;
+    }
+    h1{
+        text-align: center;
+    }
+    input{
+       margin-left: 50px;
+        
+    }
+    ul{
+        margin: 30px;
+        
+    }
+    body{
+        background: linear-gradient(rgb(78, 90, 198),rgb(249, 67, 194))
+    }
+    li{
+        margin: 10px;
+    }
+   
+</style>
